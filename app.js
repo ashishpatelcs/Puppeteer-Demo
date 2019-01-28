@@ -10,6 +10,7 @@ const takeScreenshot = async () => {
     };
 
     await page.goto('http://ashishpatel.ml');
+    await page.waitForSelector('.social-me');
     await page.screenshot(options);
 
     await browser.close();
