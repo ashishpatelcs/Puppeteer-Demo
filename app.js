@@ -1,8 +1,13 @@
 const puppeteer = require('puppeteer');
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 
 const PORT = 3000;
+
+app.use('/download', express.static('pdfs'));
+app.use('/html', express.static('files'));
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
     res.send('API Works');
@@ -38,8 +43,6 @@ const generatePDF = async () => {
 
     await browser.close();
 }
-
-generatePDF();
 
 
 // const takeScreenshot = async () => {
