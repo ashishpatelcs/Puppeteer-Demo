@@ -1,4 +1,4 @@
-const puppeteer = requrie('puppeteer');
+const puppeteer = require('puppeteer');
 
 const takeScreenshot = async () => {
     const browser = await puppeteer.launch();
